@@ -17,40 +17,36 @@ function App() {
       const returnedDatafromFirebase = response.val();
 
       for (let key in returnedDatafromFirebase) {
-
-        newState.push(returnedDatafromFirebase[key]);
-
+        newState.push({
+          key:key,
+          name: returnedDatafromFirebase[key]
+        })
       }
 
       setPaintings(newState);
     })
   }, [])
-      
+
   const addToCart = function (painting) {
-const checkOutArray = ['']
-
-    const fbData = firebase.database().ref();
-    const selection = fbData
-    checkOutArray.push(selection);
-
-    console.log(checkOutArray)
-
+    console.log('clicked')
+    console.log(painting);
  }
 
   return (
     <div className="App">
      <h1>store</h1>
-      <i class="fas fa-shopping-cart"></i>
-     <div class ="flexContainer">
-      <ul class = "paintingsGallery">
+      <i className="fas fa-shopping-cart"></i>
+     <div className="flexContainer">
+      <ul className= "paintingsGallery">
           {paintings.map((painting) => {
+          // console.log(painting)
           return(
-            <li>
-              <img src={painting.url}></img>
-              <p>{painting.title}</p>
-            <p>{painting.description}</p>
-              <button onClick={
-              addToCart()
+            <li key={painting.key}>
+              <img src={painting.name.url} alt={painting.name.description}></img>
+              <p>{painting.name.title}</p>
+            <p>{painting.name.description}</p>
+              <button onClick={ () => {
+              addToCart(painting)}
               }>
               Add to Cart
             </button>
