@@ -28,40 +28,38 @@ function App() {
   }, [])
 
   const addToCart = function (painting) {
-    console.log('clicked')
-    console.log(painting);
- }
+    const allPaint = [];
+    for(const paint in painting) {
+    allPaint.push(painting[paint]);
+    }
+    console.log(allPaint);
+    
+  }
 
   return (
     <div className="App">
      <h1>store</h1>
       <i className="fas fa-shopping-cart"></i>
-     <div className="flexContainer">
-      <ul className= "paintingsGallery">
-          {paintings.map((painting) => {
-          // console.log(painting)
-          return(
-            <li key={painting.key}>
-              <img src={painting.name.url} alt={painting.name.description}></img>
-              <p>{painting.name.title}</p>
-            <p>{painting.name.description}</p>
-              <button onClick={ () => {
-              addToCart(painting)}
-              }>
-              Add to Cart
-            </button>
-            </li>
-          )
-        })}
-        </ul>
+        <div className="flexContainer">
+          <ul className= "paintingsGallery">
+            {paintings.map((painting) => {
+                return(
+                  <li key={painting.key}>
+                    <img src={painting.name.url} alt={painting.name.description}></img>
+                    <p>{painting.name.title}</p>
+                    <p>{painting.name.description}</p>
+                    <button onClick={ () => {addToCart(painting)
+                    }
+                  }>Add to Cart</button>
+                  </li>
+                )
+            })}
+          </ul>
+        </div>
+        <div>
+
         </div>
     </div>
-    
-
-
-    
-    
-
   );
 }
 
