@@ -8,6 +8,7 @@ function App() {
   const [paintings, setPaintings] = useState([]);
   const [allPaint, setallPaint] = useState([]);
   const [cartClick, setcartClick] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
   
 
   useEffect(() => {
@@ -36,12 +37,17 @@ function App() {
 
   const addToCart = function (painting) {
     const newPaint = allPaint;
+    const newTotal = totalPrice;
+ 
     for(const paint in painting) {
-    allPaint.push(painting[paint]);
+      allPaint.push(painting[paint]);
     }
+   
     console.log(allPaint);
-    setallPaint(newPaint);
     
+    setallPaint(newPaint);
+    setTotalPrice(newTotal + painting.name.price);
+    console.log(totalPrice);
   }
 
   const checkOut = function (cartItems) {
@@ -54,7 +60,7 @@ function App() {
   return (
     <div className="App wrapper">
       {cartClick === true
-        ? <CheckOutPopup arrayOfPaintings={allPaint}/>
+        ? <CheckOutPopup arrayOfPaintings={allPaint} totalCost={totalPrice}/>
       : null}
       <div className="flex">
         <h1>store</h1>
@@ -70,7 +76,7 @@ function App() {
                     <img src={painting.name.url} alt={painting.name.description}></img>
                     <p className="space">{painting.name.title}</p>
                     <p className="Pspace">{painting.name.description}</p>
-                    <p className="Pspace price">{painting.name.price}</p>
+                    <p className="Pspace price">${painting.name.price} CAN</p>
                     <button  className="space" onClick={ () => {addToCart(painting)
                     }
                   }>Add to Cart</button>
