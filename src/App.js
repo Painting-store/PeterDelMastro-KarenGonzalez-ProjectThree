@@ -9,8 +9,10 @@ function App() {
   const [cartClick, setcartClick] = useState([false]);
   
   useEffect(() => {
+    //display the checkout popout when cartClick = true
     console.log(allPaint);
-  }, [allPaint])
+    console.log("Cart clicked")
+  }, [cartClick])
   
   useEffect(() => {
     //this is our variable to hold our reference to our database
@@ -46,6 +48,7 @@ function App() {
   const checkOut = function (cartItems) {
     console.log("clicked");
     console.log(cartItems);
+    setcartClick(true);
 
   }
 
