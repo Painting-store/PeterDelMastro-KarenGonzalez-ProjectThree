@@ -1,3 +1,4 @@
+import './Setup.css';
 import firebase from './firebase';
 import {useEffect,useState} from 'react'
 import './App.css';
@@ -37,18 +38,23 @@ function App() {
   }
 
   return (
-    <div className="App">
-     <h1>store</h1>
-      <i className="fas fa-shopping-cart"></i>
+    <div className="App wrapper">
+      <div className ="flex">
+        <h1>store</h1>
+      </div>
+      <div className="flex-icon">
+          <i className="fas fa-shopping-cart"></i>
+       </div>
         <div className="flexContainer">
-          <ul className= "paintingsGallery">
+          <ul className= "paintingsGallery grid-container">
             {paintings.map((painting) => {
                 return(
                   <li key={painting.key}>
                     <img src={painting.name.url} alt={painting.name.description}></img>
-                    <p>{painting.name.title}</p>
-                    <p>{painting.name.description}</p>
-                    <button onClick={ () => {addToCart(painting)
+                    <p className="space">{painting.name.title}</p>
+                    <p className="Pspace">{painting.name.description}</p>
+                    <p className="Pspace price">{painting.name.price}</p>
+                    <button  className="space" onClick={ () => {addToCart(painting)
                     }
                   }>Add to Cart</button>
                   </li>
