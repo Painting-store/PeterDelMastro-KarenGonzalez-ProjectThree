@@ -66,3 +66,7 @@ margin: 10px;
   font-size:20px;
   font-weight: bold;
 }
+
+#cart:hover{
+  cursor: pointer;
+}

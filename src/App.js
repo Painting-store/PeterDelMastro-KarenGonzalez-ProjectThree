@@ -5,6 +5,12 @@ import './App.css';
 
 function App() {
   const [paintings, setPaintings] = useState([]);
+  const [allPaint, setallPaint] = useState([]);
+  const [cartClick, setcartClick] = useState([false]);
+  
+  useEffect(() => {
+    console.log(allPaint);
+  }, [allPaint])
   
   useEffect(() => {
     //this is our variable to hold our reference to our database
@@ -29,12 +35,18 @@ function App() {
   }, [])
 
   const addToCart = function (painting) {
-    const allPaint = [];
+   
     for(const paint in painting) {
     allPaint.push(painting[paint]);
     }
     console.log(allPaint);
     
+  }
+
+  const checkOut = function (cartItems) {
+    console.log("clicked");
+    console.log(cartItems);
+
   }
 
   return (
@@ -43,9 +55,9 @@ function App() {
         <h1>store</h1>
       </div>
       <div className="flex-icon">
-          <i className="fas fa-shopping-cart"></i>
+        <button id="cart" onClick={() => { checkOut(allPaint) }}><i className="fas fa-shopping-cart"></i></button>
        </div>
-        <div className="flexContainer">
+      <div className="flexContainer">
           <ul className= "paintingsGallery grid-container">
             {paintings.map((painting) => {
                 return(
