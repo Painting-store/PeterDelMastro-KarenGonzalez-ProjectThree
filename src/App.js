@@ -2,10 +2,14 @@ import './Setup.css';
 import firebase from './firebase';
 import {useEffect,useState} from 'react'
 import './App.css';
+import CheckOutPopup from './Popup.js';
 
 function App() {
   const [paintings, setPaintings] = useState([]);
+  const [allPaint, setallPaint] = useState([]);
+  const [cartClick, setcartClick] = useState(false);
   
+
   useEffect(() => {
     //this is our variable to hold our reference to our database
     const dataBaseRef = firebase.database().ref();
@@ -28,8 +32,10 @@ function App() {
     })
   }, [])
 
+
+
   const addToCart = function (painting) {
-    const allPaint = [];
+   
     for(const paint in painting) {
     allPaint.push(painting[paint]);
     }
@@ -37,15 +43,25 @@ function App() {
     
   }
 
+  const checkOut = function (cartItems) {
+    console.log("clicked");
+    console.log(cartItems);
+    setcartClick(true);
+
+  }
+
   return (
     <div className="App wrapper">
-      <div className ="flex">
+      {cartClick === true
+        ? <CheckOutPopup arrayOfPaintings={allPaint}/>
+      : null}
+      <div className="flex">
         <h1>store</h1>
       </div>
       <div className="flex-icon">
-          <i className="fas fa-shopping-cart"></i>
+        <button id="cart" onClick={() => { checkOut(allPaint) }}><i className="fas fa-shopping-cart"></i></button>
        </div>
-        <div className="flexContainer">
+      <div className="flexContainer">
           <ul className= "paintingsGallery grid-container">
             {paintings.map((painting) => {
                 return(
@@ -70,6 +86,3 @@ function App() {
 }
 
 export default App;
-
-// testing
-
