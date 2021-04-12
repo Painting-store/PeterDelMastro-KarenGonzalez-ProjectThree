@@ -60,7 +60,7 @@ function App() {
         <h1>store</h1>
       </div>
       <div className="flex-icon">
-        <button id="cart" onClick={() => { checkOut(allPaint) }}><i className="fas fa-shopping-cart"></i></button>
+        <i className="fas fa-shopping-cart" id="cart" onClick={() => { checkOut(allPaint) }}></i>
        </div>
       <div className="flexContainer">
           <ul className= "paintingsGallery grid-container">

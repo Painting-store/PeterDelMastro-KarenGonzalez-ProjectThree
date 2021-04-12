@@ -4,14 +4,6 @@ img {
   height: auto;
 }
 
-.paintingsGallery {
-  border: solid 2px red;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-
-}
-
 .paintingCell {
   border: solid 2px blue;
   max-width: 20vw;
@@ -85,7 +77,7 @@ margin: 10px;
 
 .grid-container {
   display: grid;
- grid-template-columns: 36.3% 36.3% 35%;
+ grid-template-columns: 35.3% 36.3% 35%;
   padding: 10px;
 }
 
@@ -96,4 +88,23 @@ margin: 10px;
 
 #cart:hover{
   cursor: pointer;
+}
+.cartImage {
+  width: 25%;
+}
+
+.flexBox {
+  display: flex;
+}
+.cartBox {
+  position: absolute;
+  right: 163px;
+  top: 77px;
+  border:1px solid red;
+  width: 20%;
+  background-color: white;
+  padding: 20px 10px;
+}
+.list {
+  margin-bottom:0;
 }
