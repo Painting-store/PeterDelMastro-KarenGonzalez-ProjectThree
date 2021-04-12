@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
   const [paintings, setPaintings] = useState([]);
+  const cartArray = [];
   
   useEffect(() => {
     //this is our variable to hold our reference to our database
@@ -27,39 +28,49 @@ function App() {
     })
   }, [])
 
+
+
   const addToCart = function (painting) {
+    //create an array to hold the objects
+
+    cartArray.push(painting);
+
+
     console.log('clicked')
-    console.log(painting);
+    console.log(cartArray);
+
+
  }
 
   return (
     <div className="App">
      <h1>store</h1>
       <i className="fas fa-shopping-cart"></i>
-     <div className="flexContainer">
       <ul className= "paintingsGallery">
           {paintings.map((painting) => {
           // console.log(painting)
-          return(
-            <li key={painting.key}>
-              <img src={painting.name.url} alt={painting.name.description}></img>
+            return (
+              <div class= "paintingCell">
+                <li key={painting.key}>
+                  <div class = "imageContainer">
+                    <img src={painting.name.url} alt={painting.name.description}></img>
+                    </div>
               <p>{painting.name.title}</p>
-            <p>{painting.name.description}</p>
+                  <p>{painting.name.description}</p>
+                  <p>{painting.name.price}</p>
               <button onClick={ () => {
               addToCart(painting)}
               }>
               Add to Cart
             </button>
-            </li>
+                </li>
+                </div>
           )
         })}
         </ul>
-        </div>
+      
     </div>
-    
-
-
-    
+     
     
 
   );

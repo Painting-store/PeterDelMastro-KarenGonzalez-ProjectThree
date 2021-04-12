@@ -2,6 +2,37 @@
   text-align: center;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
+.paintingsGallery {
+  border: solid 2px red;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.paintingCell {
+  border: solid 2px blue;
+  max-width: 20vw;
+  margin: 20px 0px;
+}
+
+.imageContainer {
+  border: solid 2px red;
+  width: 20vw;
+ height: 50vh;
+ display: flex;
+ align-items: center;
+}
+
 li {
   list-style: none;
+}
+
+button{
+  text-align: end;
 }
