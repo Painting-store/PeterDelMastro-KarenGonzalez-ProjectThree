@@ -35,11 +35,12 @@ function App() {
 
 
   const addToCart = function (painting) {
-   
+    const newPaint = allPaint;
     for(const paint in painting) {
     allPaint.push(painting[paint]);
     }
     console.log(allPaint);
+    setallPaint(newPaint);
     
   }
 

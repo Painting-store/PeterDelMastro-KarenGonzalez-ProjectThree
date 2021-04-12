@@ -1,19 +1,21 @@
 
  
 const CheckOutPopup = function (props) {
-       console.log(props)
+  
+       console.log(props.arrayOfPaintings);
         return (
             <div>
                 <h2>Items in Your Cart:</h2>
-                {/* {props.map(() => {
+
+                {props.arrayOfPaintings.map((cartPaint) => {
+                    console.log(cartPaint);
                     return (
-                        <li key={props.key}>
-                            <img src={props.name.url} alt={props.name.description}></img>
-                            <p className="space">{props.name.title}</p>
-                            <p className="Pspace price">{props.name.price}</p>
+                        <li key={cartPaint}>
+                            <img  src={cartPaint.url} alt={cartPaint.description}></img>
+                            <p className="Pspace price">{cartPaint.price}</p>
                         </li>
                     )
-                })} */}
+                })} 
             </div>)
 
     }
