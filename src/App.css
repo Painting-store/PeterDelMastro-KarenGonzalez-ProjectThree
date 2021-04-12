@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-.paintingsGallery {
-  border: solid 2px red;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-
-}
-
-.paintingCell {
-  border: solid 2px blue;
-  max-width: 20vw;
-  margin: 20px 0px;
-}
-
-.imageContainer {
-  border: solid 2px red;
-  width: 20vw;
- height: 50vh;
- display: flex;
- align-items: center;
-}
 
 li {
   list-style: none;
+  margin-bottom: 50px;
+  height: max-content;
 }
 
-button{
-  text-align: end;
+.displayPainting {
+  width: 50%;
+  font-size: 30px;
+  color:white;
+  background-color: black;
+  position: relative;
+  top: 0;
+}
+
+.flex{
+  display:flex;
+  justify-content: space-evenly;
+}
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.fas {
+display: flex;
+justify-content: flex-end;
+position: relative;
+bottom: 68px;
+font-size:30px;
+right: 10px;
+}
+.space {
+  margin:10px;
+  text-align: center;
+}
+
+.paintingsGallery > li {
+border: 1px solid wheat;
+background: #f4f3f3;
+width: 80%;
+}
+
+button {
+  padding: 5px;
+  width: 90%;
+  margin: 0;
+}
+
+#root {
+ background-color: aliceblue;
+}
+.Pspace {
+margin: 10px;
+}
+
+.grid-container {
+  display: grid;
+ grid-template-columns: 36.3% 36.3% 35%;
+  padding: 10px;
+}
+
+.price {
+  font-size:20px;
+  font-weight: bold;
 }
