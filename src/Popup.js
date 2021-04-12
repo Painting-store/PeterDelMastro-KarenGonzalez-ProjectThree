@@ -9,9 +9,9 @@ const CheckOutPopup = function (props) {
                 {props.arrayOfPaintings.map((cartPaint) => {
                     console.log(cartPaint);
                     return (
-                        <li key={cartPaint} className="flexBox list">
+                        <li key={cartPaint} className="gridBox list">
                             <img className="cartImage" src={cartPaint.url}></img>
-                            <p className="Pspace price">{cartPaint.price}</p>
+                            <p className="Pspace price cartPrice">{cartPaint.price}</p>
                         </li>
                     )
                 })} 
