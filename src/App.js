@@ -53,6 +53,7 @@ function App() {
     setallPaint(newPaint);
     setTotalPrice(newTotal + painting.name.price);
     console.log(totalPrice);
+  
   }
 
   const checkOut = function (cartItems) {
@@ -86,9 +87,13 @@ function App() {
                     <p className="space">{painting.name.title}</p>
                     <p className="Pspace">{painting.name.description}</p>
                     <p className="Pspace price">${painting.name.price} CAN</p>
-                    <button  className="space" onClick={ () => {addToCart(painting)
+                    {painting.name.value === true
+                      ? <button  className="space" onClick={ () => {addToCart(painting)
                     }
                   }>Add to Cart</button>
+                      : <button  className="space" disabled>Added to Cart</button>
+                  }
+                    
                   </li>
                 )
             })}
