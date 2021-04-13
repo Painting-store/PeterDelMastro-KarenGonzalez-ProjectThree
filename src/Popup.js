@@ -13,7 +13,8 @@ const CheckOutPopup = function (props) {
                             <p className="Pspace price cartPrice">{cartPaint.price}</p>
                         </li>
                     )
-                })} 
+                })}
+                <p class='total price'>Total: ${props.totalCost} CAN</p>
             </div>)
 
     }
