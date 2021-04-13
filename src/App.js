@@ -41,8 +41,6 @@ function App() {
     painting.name.value = false;
 
     console.log(painting.name.value);
-
- 
     for(const paint in painting) {
       allPaint.push(painting[paint]);
 
@@ -53,7 +51,6 @@ function App() {
     setallPaint(newPaint);
     setTotalPrice(newTotal + painting.name.price);
     console.log(totalPrice);
-  
   }
 
   const checkOut = function (cartItems) {
@@ -72,7 +69,7 @@ function App() {
         ? <CheckOutPopup arrayOfPaintings={allPaint} totalCost={totalPrice}/>
       : null}
       <div className="flex">
-        <h1>store</h1>
+        <h1>Del Mastro & Gonzalez Gallery</h1>
       </div>
       <div className="flex-icon">
         <i className="fas fa-shopping-cart" id="cart"  onClick={() => { checkOut(allPaint) }}></i>
@@ -80,19 +77,18 @@ function App() {
       <div className="flexContainer">
           <ul className= "paintingsGallery grid-container">
             {paintings.map((painting) => {
-              
                 return(
                   <li key={painting.key}>
                     <img src={painting.name.url} alt={painting.name.description}></img>
                     <p className="space">{painting.name.title}</p>
                     <p className="Pspace">{painting.name.description}</p>
-                    <p className="Pspace price">${painting.name.price} CAN</p>
-                    {painting.name.value === true
-                      ? <button  className="space" onClick={ () => {addToCart(painting)
+                    <p className="price">${painting.name.price} CAN</p>
+                     {painting.name.value === true
+                      ? <button onClick={ () => {addToCart(painting)
+                      }
+                    }>Buy now</button>
+                        : <button  className="space" disabled>Added to Cart</button>
                     }
-                  }>Add to Cart</button>
-                      : <button  className="space" disabled>Added to Cart</button>
-                  }
                     
                   </li>
                 )
@@ -100,7 +96,6 @@ function App() {
           </ul>
         </div>
         <div>
-
         </div>
     </div>
   );
