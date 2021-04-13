@@ -1,7 +1,6 @@
 
  
 const CheckOutPopup = function (props) {
-  
        console.log(props.arrayOfPaintings);
         return (
             <div className="cartBox">
