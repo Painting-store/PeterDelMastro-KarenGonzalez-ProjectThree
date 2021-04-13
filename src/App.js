@@ -38,9 +38,14 @@ function App() {
   const addToCart = function (painting) {
     const newPaint = allPaint;
     const newTotal = totalPrice;
+    painting.name.value = false;
+
+    console.log(painting.name.value);
+
  
     for(const paint in painting) {
       allPaint.push(painting[paint]);
+
     }
    
     console.log(allPaint);
@@ -54,6 +59,9 @@ function App() {
     console.log("clicked");
     console.log(cartItems);
     setcartClick(true);
+    if (cartClick === true) {
+      setcartClick(false);
+    } 
 
   }
 
@@ -66,11 +74,12 @@ function App() {
         <h1>store</h1>
       </div>
       <div className="flex-icon">
-        <i className="fas fa-shopping-cart" id="cart" onClick={() => { checkOut(allPaint) }}></i>
+        <i className="fas fa-shopping-cart" id="cart"  onClick={() => { checkOut(allPaint) }}></i>
        </div>
       <div className="flexContainer">
           <ul className= "paintingsGallery grid-container">
             {paintings.map((painting) => {
+              
                 return(
                   <li key={painting.key}>
                     <img src={painting.name.url} alt={painting.name.description}></img>
