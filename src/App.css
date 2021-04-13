@@ -39,8 +39,8 @@ li {
 }
 
 h1 {
-  font-size: 3rem;
-  text-transform: uppercase;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 46px;
 }
 
 .fas {
@@ -52,8 +52,10 @@ font-size:30px;
 right: 10px;
 }
 .space {
-  margin:10px;
+  margin-top:20px;
   text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
 }
 
 .paintingsGallery > li {
@@ -65,7 +67,7 @@ width: 80%;
 button {
   padding: 5px;
   width: 90%;
-  margin: 0;
+  margin: 14px;
 }
 
 #root {
@@ -73,6 +75,9 @@ button {
 }
 .Pspace {
 margin: 10px;
+font-family: 'PT Serif', serif;
+font-size: 14px;
+text-align: center;
 }
 
 .grid-container {
@@ -84,6 +89,7 @@ margin: 10px;
 .price {
   font-size:20px;
   font-weight: bold;
+  margin-left:15px;
 }
 
 #cart:hover{
