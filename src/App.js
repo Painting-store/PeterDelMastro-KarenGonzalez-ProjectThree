@@ -9,6 +9,7 @@ function App() {
   const [allPaint, setallPaint] = useState([]);
   const [cartClick, setcartClick] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [removeItem, setRemove] = useState(true);
   
   //useEffect to fetch our data from the firebase
   useEffect(() => {
@@ -31,16 +32,34 @@ function App() {
 
   // function to add paintings to the cart and tally the total
   const addToCart = function (painting) {
-    const newPaint = allPaint;
+    console.log(painting)
+    const newPaint = [...allPaint];
     const newTotal = totalPrice;
     painting.name.value = false;
 
+
     for(const paint in painting) {
-      allPaint.push(painting[paint]);
+      newPaint.push(painting[paint]);
     }
 
     setallPaint(newPaint);
     setTotalPrice(newTotal + painting.name.price);
+  }
+
+      const removePainting = function (cartPaint) {
+        console.log(cartPaint.price)
+         const newPaint = [...allPaint];
+          const newTotal = totalPrice;
+          cartPaint.value = false;
+              console.log("clicked");
+              // console.log(cartPaint);
+
+      const filter = newPaint.filter(cartPaint => cartPaint !== allPaint) 
+      console.log(filter);
+      filter.splice();
+      // console.log(filter);
+        setallPaint(filter);
+        setTotalPrice(newTotal - cartPaint[1].price);
   }
 
   //function to toggle the checkout boolean
@@ -56,7 +75,7 @@ function App() {
   return (
     <div className="App wrapper">
       {cartClick === true
-        ? <CheckOutPopup arrayOfPaintings={allPaint} totalCost={totalPrice}/>
+        ? <CheckOutPopup arrayOfPaintings={allPaint} totalCost={totalPrice} remove={() => removePainting(allPaint)}/>
       : null}
       <div className="flex">
         <h1>Del Mastro & Gonzalez Gallery</h1>
