@@ -43,12 +43,11 @@ h1 {
 }
 
 .fas {
-display: flex;
-justify-content: flex-end;
 position: relative;
-bottom: 68px;
+bottom: 76px;
 font-size:30px;
-right: 10px;
+left: 1121px;
+width: 5%;
 }
 .space {
   margin-top:20px;
