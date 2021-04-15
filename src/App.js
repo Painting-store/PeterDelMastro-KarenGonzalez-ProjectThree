@@ -3,6 +3,7 @@ import firebase from './firebase';
 import {useEffect,useState} from 'react'
 import './App.css';
 import CheckOutPopup from './Popup.js';
+import imageSrc from './images/p-paint.png';
 
 function App() {
   const [paintings, setPaintings] = useState([]);
@@ -56,10 +57,9 @@ function App() {
 
       const filter = newPaint.filter(cartPaint => cartPaint !== allPaint) 
       console.log(filter);
-      filter.splice();
+      filter.pop();
       // console.log(filter);
         setallPaint(filter);
-        setTotalPrice(newTotal - cartPaint[1].price);
   }
 
   //function to toggle the checkout boolean
@@ -80,6 +80,7 @@ function App() {
       <div className="flex">
         <h1>Del Mastro & Gonzalez Gallery</h1>
       </div>
+      <blockquote><i>"If you could say it in words, there would be no reason to paint." Edward Hopper</i></blockquote>
       <div className="flex-icon">
         <i className="fas fa-shopping-cart" id="cart"  onClick={() => { checkOut(allPaint) }}></i>
        </div>
@@ -103,6 +104,16 @@ function App() {
                 )
             })}
           </ul>
+        </div>
+        <div className="peterSection flexBox">
+          <div className="divStyle">
+          <h3>Upcoming exhibition</h3>
+          <img className="peterImg" src={imageSrc}></img>
+          </div>
+          <div>
+          <h4>Peter Del Mastro</h4>
+          <p></p>
+          </div>
         </div>
         <div>
         </div>
