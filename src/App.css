@@ -104,12 +104,12 @@ text-align: center;
 }
 .cartBox {
   position: absolute;
-  right: 163px;
-  top: 77px;
-  border:1px solid red;
+  right: 182px;
+  top: 81px;
   width: 20%;
   background-color: white;
-  padding: 20px 10px;
+  padding: 30px 10px;
+  font-family: 'Oxygen', sans-serif;
 }
 .list {
   margin-bottom:0;
@@ -117,6 +117,7 @@ text-align: center;
 .gridBox {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-left: 14px;
 }
 
 .cartPrice {
@@ -126,8 +127,8 @@ text-align: center;
 
 .total {
   border-top: 2px solid black;
-  padding-top: 5px;
-  margin-top: 5px;
+  padding-top: 8px;
+  margin-top: 17px;
 }
 button:active {
   background-color: rgb(170, 153, 153);
@@ -135,4 +136,9 @@ button:active {
   padding: 1px;
   width: 90%;
   border-radius: 2px;
+}
+
+h2 {
+  margin-left: 14px;
+  font-family: 'Ubuntu', sans-serif;
 }

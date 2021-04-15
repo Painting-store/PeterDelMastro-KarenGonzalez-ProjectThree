@@ -10,16 +10,12 @@ function App() {
   const [cartClick, setcartClick] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
   
-
+  //useEffect to fetch our data from the firebase
   useEffect(() => {
-    //this is our variable to hold our reference to our database
     const dataBaseRef = firebase.database().ref();
-
     dataBaseRef.on('value', response => {
       
-      //this is our storage array for the returned data 
       const newState = [];
-
       const returnedDatafromFirebase = response.val();
 
       for (let key in returnedDatafromFirebase) {
@@ -28,35 +24,29 @@ function App() {
           name: returnedDatafromFirebase[key]
         })
       }
-
       setPaintings(newState);
     })
   }, [])
 
 
-
+  // function to add paintings to the cart and tally the total
   const addToCart = function (painting) {
     const newPaint = allPaint;
     const newTotal = totalPrice;
     painting.name.value = false;
 
-    console.log(painting.name.value);
     for(const paint in painting) {
       allPaint.push(painting[paint]);
-
     }
-   
-    console.log(allPaint);
-    
+
     setallPaint(newPaint);
     setTotalPrice(newTotal + painting.name.price);
-    console.log(totalPrice);
   }
 
+  //function to toggle the checkout boolean
   const checkOut = function (cartItems) {
-    console.log("clicked");
-    console.log(cartItems);
     setcartClick(true);
+    
     if (cartClick === true) {
       setcartClick(false);
     } 
