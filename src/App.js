@@ -3,12 +3,14 @@ import firebase from './firebase';
 import {useEffect,useState} from 'react'
 import './App.css';
 import CheckOutPopup from './Popup.js';
+import imageSrc from './images/p-paint.png';
 
 function App() {
   const [paintings, setPaintings] = useState([]);
   const [allPaint, setallPaint] = useState([]);
   const [cartClick, setcartClick] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [removeItem, setRemove] = useState(true);
   
   //useEffect to fetch our data from the firebase
   useEffect(() => {
@@ -31,16 +33,33 @@ function App() {
 
   // function to add paintings to the cart and tally the total
   const addToCart = function (painting) {
-    const newPaint = allPaint;
+    console.log(painting)
+    const newPaint = [...allPaint];
     const newTotal = totalPrice;
     painting.name.value = false;
 
+
     for(const paint in painting) {
-      allPaint.push(painting[paint]);
+      newPaint.push(painting[paint]);
     }
 
     setallPaint(newPaint);
     setTotalPrice(newTotal + painting.name.price);
+  }
+
+      const removePainting = function (cartPaint) {
+        console.log(cartPaint.price)
+         const newPaint = [...allPaint];
+          const newTotal = totalPrice;
+          cartPaint.value = false;
+              console.log("clicked");
+              // console.log(cartPaint);
+
+      const filter = newPaint.filter(cartPaint => cartPaint !== allPaint) 
+      console.log(filter);
+      filter.pop();
+      // console.log(filter);
+        setallPaint(filter);
   }
 
   //function to toggle the checkout boolean
@@ -56,11 +75,12 @@ function App() {
   return (
     <div className="App wrapper">
       {cartClick === true
-        ? <CheckOutPopup arrayOfPaintings={allPaint} totalCost={totalPrice}/>
+        ? <CheckOutPopup arrayOfPaintings={allPaint} totalCost={totalPrice} remove={() => removePainting(allPaint)}/>
       : null}
       <div className="flex">
         <h1>Del Mastro & Gonzalez Gallery</h1>
       </div>
+      <blockquote><i>"If you could say it in words, there would be no reason to paint." Edward Hopper</i></blockquote>
       <div className="flex-icon">
         <i className="fas fa-shopping-cart" id="cart"  onClick={() => { checkOut(allPaint) }}></i>
        </div>
@@ -84,6 +104,16 @@ function App() {
                 )
             })}
           </ul>
+        </div>
+        <div className="peterSection flexBox">
+          <div className="divStyle">
+          <h3>Upcoming exhibition</h3>
+          <img className="peterImg" src={imageSrc}></img>
+          </div>
+          <div>
+          <h4>Peter Del Mastro</h4>
+          <p></p>
+          </div>
         </div>
         <div>
         </div>
