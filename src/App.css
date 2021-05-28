@@ -189,4 +189,19 @@ h4 {
   grid-template-columns: 50% 50%;
   padding-left: 8%;
   }
+  .peterImg {
+  width: 71%;
+  }
+}
+@media (max-width:600px) {
+.grid-container {
+    grid-template-columns: 1fr;
+    padding: 0;
+}
+.paintingsGallery > li {
+  width: 100%;
+  }
+h1 {
+font-size: 3rem;
+}
 }
