@@ -66,14 +66,10 @@ function App() {
         : null}
 
         <div className="flex">
-          <h1>Del Mastro & Gonzalez Gallery</h1>
+          <h1>Del Mastro & Gonzalez Gallery <i className="fas fa-shopping-cart" id="cart"  onClick={() => { checkOut(allPaint) }}></i></h1>
         </div>
 
         <blockquote><i>"If you could say it in words, there would be no reason to paint." Edward Hopper</i></blockquote>
-        <div className="flex-icon">
-          <i className="fas fa-shopping-cart" id="cart"  onClick={() => { checkOut(allPaint) }}></i>
-        </div>
-
         <div className="flexContainer">
           <ul className= "paintingsGallery grid-container">
             {paintings.map((painting) => {
