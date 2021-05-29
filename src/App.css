@@ -196,12 +196,18 @@ h4 {
 @media (max-width:600px) {
 .grid-container {
     grid-template-columns: 1fr;
-    padding: 0;
+    padding: 30px;
 }
 .paintingsGallery > li {
   width: 100%;
   }
-h1 {
-font-size: 3rem;
-}
+  h1 {
+  font-size: 3rem;
+  }
+  .peterImg {
+  width: 96%;
+  }
+  h4 {
+  font-size: 33px;
+  }
 }
