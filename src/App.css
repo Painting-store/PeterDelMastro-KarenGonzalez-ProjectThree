@@ -107,7 +107,7 @@ text-align: center;
 }
 .cartBox {
   position: absolute;
-  right: 182px;
+  right: 257px;
   top: 81px;
   width: 20%;
   background-color: white;
@@ -183,7 +183,19 @@ h4 {
   width: 55%;
   margin-left: 3%;
 }
-
+@media (max-width:1138px) {
+  .cartBox {
+  right: 112px;
+  top: 78px;
+  width: 26%;
+  }
+}
+@media (max-width: 950px) {
+.cartBox {
+right: 39%;
+width: 40%;
+}
+}
 @media (max-width:876px) {
   .grid-container {
   grid-template-columns: 50% 50%;
@@ -192,13 +204,22 @@ h4 {
   .peterImg {
   width: 71%;
   }
+  .cartBox {
+  top: 24%;
+  }
+}
+@media (max-width: 660px) {
+  .cartBox {
+  right: 13%;
+  top: 26%;
+  }
 }
 @media (max-width:600px) {
-.grid-container {
-    grid-template-columns: 1fr;
-    padding: 30px;
-}
-.paintingsGallery > li {
+  .grid-container {
+      grid-template-columns: 1fr;
+      padding: 30px;
+  }
+  .paintingsGallery > li {
   width: 100%;
   }
   h1 {
@@ -209,5 +230,22 @@ h4 {
   }
   h4 {
   font-size: 33px;
+  }
+  .cartBox {
+    right: 39%;
+    top: 18%;
+  }
+}
+@media (max-width:454px) {
+  .cartBox {
+  right: 53%;
+  width: 46%;
+  top: 30%;
+  }
+}
+@media (max-width: 400px) {
+  .cartBox {
+  right: 40%;
+  width: 56%;
   }
 }
