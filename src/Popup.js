@@ -1,4 +1,3 @@
-//function to display the checkout box
 const CheckOutPopup = function (props) {
   return (
     <div className="cartBox">
@@ -33,7 +32,7 @@ const CheckOutPopup = function (props) {
       <p className="total price">Total: ${props.totalCost} CAN</p>
       <button
         onClick={props.handleCheckoutClick}
-        disabled={props.arrayOfPaintings.length === 0} // Disable if the array is empty
+        disabled={props.arrayOfPaintings.length === 0}
         style={{
           backgroundColor: props.arrayOfPaintings.length === 0 ? "" : "",
           cursor:

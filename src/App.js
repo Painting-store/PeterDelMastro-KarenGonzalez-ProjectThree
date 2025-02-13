@@ -13,20 +13,17 @@ function App() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [navPage, setNavPage] = useState("home");
 
-  const cartRef = useRef(null); // Ref for the checkout popup
+  const cartRef = useRef(null);
 
-  // Close the cart if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (cartRef.current && !cartRef.current.contains(event.target)) {
-        setcartClick(false); // Close the cart
+        setcartClick(false);
       }
     };
 
-    // Add event listener
     document.addEventListener("click", handleClickOutside);
 
-    // Cleanup event listener
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
@@ -41,7 +38,6 @@ function App() {
     clearCart();
     setNavPage("home");
   };
-  //useEffect to fetch our data from the firebase
   useEffect(() => {
     const usersRef = ref(database, "/");
 
@@ -69,7 +65,6 @@ function App() {
       });
   }, []);
 
-  // function to add paintings to the cart and tally the total
   const addToCart = function (painting) {
     const newPaint = [...allPaint];
     const rawTotal = totalPrice?.toString().replace(/,/g, "");
@@ -109,7 +104,6 @@ function App() {
     setTotalPrice(0);
   };
 
-  //function to toggle the checkout boolean
   const checkOut = function () {
     setcartClick(!cartClick);
   };
@@ -212,18 +206,18 @@ function App() {
 
         <h1
           style={{
-            textAlign: "center", // Center the text horizontally
-            cursor: "pointer", // Change cursor to pointer on hover
-            padding: "10px 20px", // Add padding for a button-like feel
-            backgroundColor: "grey", // Blue background for emphasis
-            color: "#ffffff", // White text color
-            borderRadius: "8px", // Rounded corners for a soft look
-            border: "none", // Remove border for a clean look
-            fontSize: "24px", // Larger font for readability
-            fontWeight: "bold", // Make the text bold for emphasis
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
-            display: "inline-block", // Make it inline-block for padding and margins
-            margin: "20px auto", // Center the element and add margin for spacing
+            textAlign: "center",
+            cursor: "pointer",
+            padding: "10px 20px",
+            backgroundColor: "grey",
+            color: "#ffffff",
+            borderRadius: "8px",
+            border: "none",
+            fontSize: "24px",
+            fontWeight: "bold",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            display: "inline-block",
+            margin: "20px auto",
           }}
           onClick={handleReturnClick}
         >
