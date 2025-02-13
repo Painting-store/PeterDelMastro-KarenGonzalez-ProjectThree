@@ -14,12 +14,20 @@ function App() {
   const [navPage, setNavPage] = useState("home");
 
   const cartRef = useRef(null);
-
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (cartRef.current && !cartRef.current.contains(event.target)) {
-        setcartClick(false);
+      const cartIcon = document.querySelector("#cart");
+
+      if (cartRef.current && cartRef.current.contains(event.target)) {
+        return;
       }
+
+      if (cartIcon && cartIcon.contains(event.target)) {
+        setcartClick(true);
+        return;
+      }
+
+      setcartClick(false);
     };
 
     document.addEventListener("click", handleClickOutside);
@@ -110,27 +118,20 @@ function App() {
   if (navPage === "home") {
     return (
       <div className="App wrapper">
-        {cartClick === true ? (
-          <CheckOutPopup
-            arrayOfPaintings={allPaint}
-            totalCost={totalPrice}
-            remove={removePainting}
-            handleCheckoutClick={handleCheckoutClick}
-          />
-        ) : null}
-
         <div className="flex" ref={cartRef}>
-          <h1>
-            Del Mastro & Gonzalez Gallery{" "}
-            <i
-              className="fas fa-shopping-cart"
-              id="cart"
-              onClick={() => {
-                checkOut(allPaint);
-              }}
-            ></i>
-          </h1>
+          {cartClick ? (
+            <CheckOutPopup
+              arrayOfPaintings={allPaint}
+              totalCost={totalPrice}
+              remove={removePainting}
+              handleCheckoutClick={handleCheckoutClick}
+            />
+          ) : null}
         </div>
+        <h1>
+          Del Mastro & Gonzalez Gallery{" "}
+          <i className="fas fa-shopping-cart" id="cart" onClick={checkOut}></i>
+        </h1>
 
         <blockquote>
           <i>
