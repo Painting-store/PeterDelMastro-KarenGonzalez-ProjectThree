@@ -26,61 +26,61 @@ li {
 .displayPainting {
   width: 50%;
   font-size: 30px;
-  color:white;
+  color: white;
   background-color: black;
   position: relative;
   top: 0;
 }
 
-.flex{
-  display:flex;
+.flex {
+  display: flex;
   justify-content: space-evenly;
 }
 
 h1 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 4rem;
   padding-top: 30px;
   width: 100%;
   text-align: center;
   padding-bottom: 20px;
-  border-bottom:5px solid black;
+  border-bottom: 5px solid black;
 }
 
 .fas {
-  color:goldenrod;
+  color: goldenrod;
   margin-left: 3%;
   font-size: 50px;
 }
 
 .space {
-  margin-top:20px;
+  margin-top: 20px;
   text-align: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: bold;
 }
 
 .paintingsGallery > li {
-border: 1px solid wheat;
-background: #f4f3f3;
-width: 80%;
+  border: 1px solid wheat;
+  background: #f4f3f3;
+  width: 80%;
 }
 
 button {
   padding: 1px;
   width: 90%;
   margin: 14px;
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 
 #root {
- background-color: aliceblue;
+  background-color: aliceblue;
 }
 .Pspace {
-margin: 10px;
-font-family: 'Oxygen', sans-serif;
-font-size: 14px;
-text-align: center;
+  margin: 10px;
+  font-family: "Oxygen", sans-serif;
+  font-size: 14px;
+  text-align: center;
 }
 
 .grid-container {
@@ -90,12 +90,12 @@ text-align: center;
 }
 
 .price {
-  font-size:20px;
+  font-size: 20px;
   font-weight: bold;
-  margin-left:15px;
+  margin-left: 15px;
 }
 
-#cart:hover{
+#cart:hover {
   cursor: pointer;
 }
 .cartImage {
@@ -112,10 +112,10 @@ text-align: center;
   width: 20%;
   background-color: white;
   padding: 30px 10px;
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 .list {
-  margin-bottom:0;
+  margin-bottom: 0;
 }
 .gridBox {
   display: grid;
@@ -125,7 +125,7 @@ text-align: center;
 }
 
 .cartPrice {
-  margin-top:15px;
+  margin-top: 15px;
   text-align: end;
 }
 
@@ -144,30 +144,29 @@ button:active {
 
 h2 {
   margin-left: 14px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 blockquote {
   text-align: center;
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
   font-size: 30px;
   margin-bottom: 100px;
 }
 ul {
-  margin-top:40px;
+  margin-top: 40px;
 }
 .peterImg {
   width: 45%;
   margin: 30px 0px;
 }
 .peterSection {
-  border-top:5px solid black;
-  
+  border-top: 5px solid black;
 }
 h3 {
   font-size: 35px;
-  margin-top:15px;
-  font-family: 'Ubuntu', sans-serif;
+  margin-top: 15px;
+  font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
 }
 .flexBox {
@@ -177,75 +176,75 @@ h3 {
 
 h4 {
   font-size: 50px;
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
 }
 .divStyle {
   width: 55%;
   margin-left: 3%;
 }
-@media (max-width:1138px) {
+@media (max-width: 1138px) {
   .cartBox {
-  right: 112px;
-  top: 78px;
-  width: 26%;
+    right: 112px;
+    top: 78px;
+    width: 26%;
   }
 }
 @media (max-width: 950px) {
   .cartBox {
-  right: 39%;
-  width: 40%;
+    right: 39%;
+    width: 40%;
   }
 }
-@media (max-width:876px) {
+@media (max-width: 876px) {
   .grid-container {
-  grid-template-columns: 50% 50%;
-  padding-left: 8%;
+    grid-template-columns: 50% 50%;
+    padding-left: 8%;
   }
   .peterImg {
-  width: 71%;
+    width: 71%;
   }
   .cartBox {
-  top: 24%;
+    top: 24%;
   }
 }
 @media (max-width: 660px) {
   .cartBox {
-  right: 13%;
-  top: 26%;
+    right: 13%;
+    top: 26%;
   }
 }
-@media (max-width:600px) {
+@media (max-width: 600px) {
   .grid-container {
-  grid-template-columns: 1fr;
-  padding: 30px;
+    grid-template-columns: 1fr;
+    padding: 30px;
   }
   .paintingsGallery > li {
-  width: 100%;
+    width: 100%;
   }
   h1 {
-  font-size: 3rem;
+    font-size: 3rem;
   }
   .peterImg {
-  width: 96%;
+    width: 96%;
   }
   h4 {
-  font-size: 33px;
+    font-size: 33px;
   }
   .cartBox {
-  right: 39%;
-  top: 18%;
+    right: 39%;
+    top: 18%;
   }
 }
-@media (max-width:454px) {
+@media (max-width: 454px) {
   .cartBox {
-  right: 53%;
-  width: 46%;
-  top: 30%;
+    right: 53%;
+    width: 46%;
+    top: 30%;
   }
 }
 @media (max-width: 400px) {
   .cartBox {
-  right: 40%;
-  width: 56%;
+    right: 40%;
+    width: 56%;
   }
 }
